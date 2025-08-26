@@ -54,7 +54,7 @@ function App() {
       
       setWeatherData(transformedData);
     } catch (error) {
-      alert('Failed to fetch weather data: ' + error.message);
+      alert('Failed to fetch weather data');
       console.error('Error fetching weather data:', error);
     } finally {
       setLoading(false);
@@ -78,7 +78,7 @@ function App() {
             <button className="search-button" onClick={fetchWeatherData}>Search</button>
           </div>
           
-          {loading && <p className="loading-text">Loading data...</p>}
+          {loading && <p>Loading data...</p>}
           
           {weatherData && (
             <div className="weather-cards" ref={weatherCardsRef}>
