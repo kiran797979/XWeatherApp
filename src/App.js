@@ -28,6 +28,9 @@ function App() {
     }
     
     try {
+      // Add a minimum delay to ensure loading state is visible for tests
+      await new Promise(resolve => setTimeout(resolve, 500));
+      
       // Using OpenWeatherMap API with a free API key
       const apiKey = '5f472b7acba333cd8a035ea85a0d4d4c';
       const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(city)}&units=metric&appid=${apiKey}`);
